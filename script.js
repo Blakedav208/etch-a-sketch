@@ -19,7 +19,7 @@ function addColorEffect(nodeList) {
       div.style.backgroundColor = "blue";
     });
   });
-}
+}//end of add color effect
 
 addColorEffect(divs);
 
@@ -33,7 +33,16 @@ clearBtn.addEventListener("click", () => {
   let newGridSize = parseInt(prompt("New Grid Size?:"));
   mainDiv.style.gridTemplateColumns = `repeat(${newGridSize}, 20px)`;
   mainDiv.style.gridTemplateRows = `repeat(${newGridSize}, 20px)`;
+  removeDivs(256);
   makeDivs(newGridSize * newGridSize);
   const newDivs = document.querySelectorAll(".boardDiv");
   addColorEffect(newDivs);
 });
+
+function removeDivs(size){
+    for(let i = 0; i < size; i++){
+        const boardDiv = document.querySelector('.boardDiv');
+        mainDiv.removeChild(boardDiv);
+    }
+
+}
