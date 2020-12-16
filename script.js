@@ -1,5 +1,3 @@
-
-
 const mainDiv = document.querySelector(".boardContainer");
 function makeDivs(size) {
   for (let i = 0; i < size; i++) {
@@ -8,8 +6,8 @@ function makeDivs(size) {
     mainDiv.appendChild(newDiv);
   }
 } //end of make divs
-
-makeDivs(256);
+let gridSize = 256;
+makeDivs(gridSize);
 
 const divs = document.querySelectorAll(".boardDiv");
 
@@ -19,7 +17,7 @@ function addColorEffect(nodeList) {
       div.style.backgroundColor = "blue";
     });
   });
-}//end of add color effect
+} //end of add color effect
 
 addColorEffect(divs);
 
@@ -30,19 +28,23 @@ clearBtn.addEventListener("click", () => {
     div.style.backgroundColor = "white";
   });
 
+  createNewBoard();
+});
+
+function createNewBoard() {
   let newGridSize = parseInt(prompt("New Grid Size?:"));
   mainDiv.style.gridTemplateColumns = `repeat(${newGridSize}, 20px)`;
   mainDiv.style.gridTemplateRows = `repeat(${newGridSize}, 20px)`;
-  removeDivs(256);
+  removeDivs(gridSize);
+  gridSize = newGridSize * newGridSize;
   makeDivs(newGridSize * newGridSize);
   const newDivs = document.querySelectorAll(".boardDiv");
   addColorEffect(newDivs);
-});
+}
 
-function removeDivs(size){
-    for(let i = 0; i < size; i++){
-        const boardDiv = document.querySelector('.boardDiv');
-        mainDiv.removeChild(boardDiv);
-    }
-
+function removeDivs(size) {
+  for (let i = 0; i < size; i++) {
+    const boardDiv = document.querySelector(".boardDiv");
+    mainDiv.removeChild(boardDiv);
+  }
 }

@@ -2,11 +2,12 @@
     display: grid;
     grid-template-columns: repeat(16, 20px);
     grid-template-rows: repeat(16, 20px);
-    
+    height: 100%;
+    width: 100%;
 }
 
 .boardDiv{
-    border: 1px solid black;
+    border: .5px solid black;
     
 }
 
