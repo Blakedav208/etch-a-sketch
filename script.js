@@ -33,8 +33,8 @@ clearBtn.addEventListener("click", () => {
 
 function createNewBoard() {
   let newGridSize = parseInt(prompt("New Grid Size?:"));
-  mainDiv.style.gridTemplateColumns = `repeat(${newGridSize}, 20px)`;
-  mainDiv.style.gridTemplateRows = `repeat(${newGridSize}, 20px)`;
+  mainDiv.style.gridTemplateColumns = `repeat(${newGridSize}, 1fr)`;
+  mainDiv.style.gridTemplateRows = `repeat(${newGridSize}, 1fr)`;
   removeDivs(gridSize);
   gridSize = newGridSize * newGridSize;
   makeDivs(newGridSize * newGridSize);
