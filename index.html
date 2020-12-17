@@ -3,13 +3,21 @@
   <head>
     <title>etch-a-sketch</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" type="image/jpg" href="images/color grid.png"/>
   </head>
 
   <body>
     <header>
+      <h1 class="header">Sketch Pad</h1>
     </header>
-    <button class="clearGrid">Clear Grid</button>
-    <div class="boardContainer"></div>
+    <div class="boardButtons">
+      <button class="clearGrid">Clear</button>
+      <button class="resizeGrid">Resize</button>
+      <input type="color" id="colorPicker">
+    </div>
+    <div id="containerWrapper">
+      <div class="boardContainer"></div>
+    </div>
     <footer></footer>
     <script src="script.js" type="text/javascript"></script>
   </body>
