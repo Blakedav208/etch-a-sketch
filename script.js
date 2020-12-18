@@ -10,11 +10,11 @@ function makeDivs(size) {
 let gridSize = 256;
 makeDivs(gridSize);
 
-const divs = document.querySelectorAll(".boardDiv");
+let divs = document.querySelectorAll(".boardDiv");
 
 function addColorEffect(nodeList, color) {
   nodeList.forEach((div) => {
-    div.addEventListener("mouseover", (e) => {
+    div.addEventListener("mouseover", () => {
       div.style.backgroundColor = `${color}`;
     });
   });
@@ -33,6 +33,7 @@ clearBtn.addEventListener("click", () => {
 const resizeBtn = document.querySelector(".resizeGrid");
 
 resizeBtn.addEventListener("click", createNewBoard);
+resizeBtn.addEventListener("click", addColorToNewDivs);
 
 function createNewBoard() {
   let newGridSize = parseInt(prompt("New Grid Size?:"));
@@ -41,7 +42,13 @@ function createNewBoard() {
   removeDivs(gridSize);
   gridSize = newGridSize * newGridSize;
   makeDivs(newGridSize * newGridSize);
-  const newDivs = document.querySelectorAll(".boardDiv");
+  //const newDivs = document.querySelectorAll(".boardDiv");
+  //addColorEffect(newDivs, colorPicker.value);
+  
+}
+
+function addColorToNewDivs(){
+    const newDivs = document.querySelectorAll(".boardDiv");
   addColorEffect(newDivs, "black");
 }
 
@@ -52,11 +59,11 @@ function removeDivs(size) {
   }
 }
 
-const colorPicker = document.getElementById('colorPicker');
+const colorPicker = document.getElementById("colorPicker");
 
-colorPicker.addEventListener('change', () =>{
-    let color = colorPicker.value;
-    console.log(color);
-
-    addColorEffect(divs, color);
+colorPicker.addEventListener("change", () => {
+  let color = colorPicker.value;
+  divs = document.querySelectorAll(".boardDiv");
+  addColorEffect(divs, color);
+  
 });
