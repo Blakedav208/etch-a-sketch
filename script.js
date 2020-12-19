@@ -48,8 +48,8 @@ function createNewBoard() {
 }
 
 function addColorToNewDivs(){
-    const newDivs = document.querySelectorAll(".boardDiv");
-  addColorEffect(newDivs, "black");
+    divs = document.querySelectorAll(".boardDiv");
+  addColorEffect(divs, "black");
 }
 
 function removeDivs(size) {

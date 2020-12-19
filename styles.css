@@ -10,6 +10,11 @@
     color: Grey;
 }
 
+.header:hover{
+    transform: scale(1.2);
+    color: blue;
+}
+
 #containerWrapper{
     display: flex;
     justify-content: center;
@@ -32,11 +37,30 @@
 
 .boardButtons{
     display: flex;
-    justify-content: flex-start;
+    
     
 }
 
 button{
-    font-size: 20px;
+    
+    width: 70px;
+    height: 50px;
 }
+
+input{
+    width: 65px;
+    height: 45px;
+}
+
+button:hover{
+    background-color: blue;
+    color: white;
+}
+
+input:hover{
+    background-color: white;
+    
+}
+
+
 
